@@ -14,7 +14,7 @@ import os
 from huggingface_hub import login
 
 TOKEN = os.getenv('HF_TOKEN')
-MODEL = ''
+MODEL = 'meta-llama/Llama-3.2-1B'
 
 login(TOKEN)
 

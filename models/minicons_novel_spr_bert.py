@@ -14,7 +14,7 @@ import os
 from huggingface_hub import login
 
 TOKEN = os.getenv('HF_TOKEN')
-MODEL = ''
+MODEL = 'FacebookAI/xlm-roberta-base'
 
 login(TOKEN)
 
