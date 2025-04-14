@@ -1,0 +1,39 @@
+
+the folder contains scripts to generate embedding representations and relation probabilities
+
+## minicons_dataset_model.py = scripts to generate contextualized word embeddings using BERT-base-uncased and Llama-2-13b. 
+The scripts also compute the cosine similarities between the contextualized word embeddings of a compound and its 36 variants. 
+Cosine similarities can be found in the relation_probabilities folder
+
+input sentences to the minicons_dataset_model.py scripts are:
+## sentence_existing_spr.csv = Benjamin & Schmidtke (2023) self-paced rading (spr) sentences for existing compounds;
+## sentence_novel_spr.csv = Benjamin & Schmidtke (2023) self-paced rading (spr) sentences for novel compounds;
+## sentence_variants.csv = UkWac sentences for the decontextualized condition
+
+
+
+tokenization folder
+
+contains .py script to tokenize compounds and to get examples of tokenized items (both are saved as .csv)
+contains .R file to generate plots of tokenization behavior
+
+
+
+baseline folder (code for DSMs baseline models)
+
+## embeddings:
+static_relations_computation.m = takes as input the sentences in relation_sentences, the relations in relations.mat
+and the embeddings from the Baroni et al., (2014) space; outputs avg_relation_vecDiffs.csv and relation_vecs.csv
+
+avg_relation_vecDiffs.csv = semantic relations defined by vector differences in the Baroni et al. space
+relations_vecs.csv = semantic relations defined by vectors in the Baroni et al. space
+
+vector_difference_validation.m = code to run the validation of the vector difference model
+
+The CAOSS folder contains the command line code to train the CAOSS model using dissect, the (modifier, head, compound)
+triplets for training and inference, and the vectors at inference (COMPOSED_SS.FullAdditive.CAOSS_testset.txt.dm)
+
+## compute relation probabilities:
+baseline_probabilities_generation.m = takes as input the embeddings of the three baseline models and the identity of
+the stimuli in each dataset (i.e., compNames_decontextualized.csv, compNames_existing_spr.csv, compNames_novel_spr.csv)
+and input.csv; outputs relation probabilities of all three baseline models for all three conditions (datasets)

@@ -1,0 +1,22 @@
+### setup: make sure to set the correct pythonpath to run the dissect scripts
+
+# this script assumes that the input semantic spaces are available in the .pkl format
+# set the working directory to where you have stored the input files 
+# include the DISSECT package in the working directory
+# Attention: DISSECT works in Python 2.7
+
+
+### setting the correct directory
+cd ...\models\baseline\CAOSS
+
+### Preparing the semantic space in the correct format
+python ...\CAOSS\dissect\src\pipelines\build_core_space.py -i baroni_space --input_format dm -o .
+
+### Training
+python ...\CAOSS\dissect\src\pipelines\train_composition.py -i CAOSS_trainset.txt -m full_add -a CORE_SS.baroni_space.pkl -p CORE_SS.baroni_space.pkl -o . --export_params True 
+
+### Composition
+python ...\CAOSS\dissect\src\pipelines\apply_composition.py -i CAOSS_testset.txt --load_model TRAINED_COMP_MODEL.full_add.CAOSS_trainset.txt.pkl -a CORE_SS.baroni_space.pkl -o . --output_format dm
+
+
+

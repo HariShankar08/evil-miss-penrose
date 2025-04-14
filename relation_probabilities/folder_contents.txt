@@ -1,0 +1,7 @@
+
+folders contain the cosines and truncated probabilities (prefix "tp_") of the 16 relational interpretations used in the 
+behavioral studies (suffix "_original") and the 36 relational interpretations for the "alternative wording" control
+(suffix "_max"; here, where multiple formulations of the same relational interpretation were available, the maximum cosine 
+was chosen to quantify the relation's strenght. In the case of "decontextualized" compounds (i.e., compound rated in isolation; 
+analysis 1), a suffix specifies the number of sentences over which the average contextualized word embeddings were computed
+("_10", "_5", "_2"; no suffix = 15 sentences) 

@@ -1,0 +1,19 @@
+
+for each dataset (compound conditions:
+analysis 1 (decontextualized) = existing compounds rated in isolation
+analysis 2 (spr_existing_count) = existing compounds rated in the context of self-paced read (spr) sentences
+analysis 3 (spr_novel_count) = novel compounds rated in the context of self-paced read (spr) sentences
+) the folder contains:
+
+R scripts to run and compare negative Binomial models predicting selection frequency from relation probability; 
+the .csv file contains the relevant input data for each analysis
+R scripts to generate the plots reported in the paper
+R scripts to test the assumptions of negative Binomial models (DHARMa package); outputs can be found in models_assumptions_plots folders
+
+suffix "_original" denotes data from analyses conducted using the 16 relational interpretations originally used in the behavioral studies
+suffix "_max" denotes data from analyses conducted using the broader set 36 relational interpretations for the "alternative wording" control; 
+here, where multiple formulations of the same relational interpretation were available, the maximum cosine was chosen to quantify the relation's strenght
+
+item_examples.r generates the plot of the compounds for which model-predicted and obseerved selection frequencies were most and least aligned.
+
+
