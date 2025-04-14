@@ -39,7 +39,7 @@ print("sentences loaded")
 #model = cwe.CWE('../llama_13B_hf_weights/', device= 'cpu', llama=True)
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu' # "cpu"
 # model_name = "meta-llama/Llama-2-13b-hf" #'../llama_13B_hf_weights/'
-model = cwe.CWE(MODEL, device= device, llama=True)#, load_in_4bit=True)
+model = cwe.CWE(MODEL, device= device)#, load_in_4bit=True)
 
 # compute contextualized word embeddings in batches
 res = []

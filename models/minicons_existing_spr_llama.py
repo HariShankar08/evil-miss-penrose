@@ -14,7 +14,7 @@ import os
 from huggingface_hub import login
 
 TOKEN = os.getenv('HF_TOKEN')
-MODEL = ''
+MODEL = 'meta-llama/Llama-3.2-1B'
 
 login(TOKEN)
 
@@ -37,7 +37,7 @@ with open('./sentence_existing_spr.csv', newline='') as f:
 #model = cwe.CWE('../llama_13B_hf_weights/', device= 'cpu', llama=True)
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu' # "cpu"
 # model_name = "meta-llama/Llama-2-13b-hf" #'../llama_13B_hf_weights/'
-model = cwe.CWE(MODEL, device= device, llama=True)
+model = cwe.CWE(MODEL, device= device)
 
 # compute contextualized word embeddings in batches
 res = []
